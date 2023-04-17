@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "agency_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency.agency"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "job_type": {
+      "type": "enumeration",
+      "enum": [
+        "Tiempo Completo",
+        "Medio Tiempo",
+        "Prestacion de Servicios"
+      ]
+    }
+  }
+}
